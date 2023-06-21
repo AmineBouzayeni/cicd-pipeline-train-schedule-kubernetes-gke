@@ -8,8 +8,8 @@ spec:
     app: train-schedule
   ports:
   - protocol: TCP
-    port: 8080
-    nodePort: 8080
+    port: 30003
+    nodePort: 30003
 
 ---
 
@@ -33,6 +33,6 @@ spec:
       - name: train-schedule
         image: __DOCKER_IMAGE_NAME__:__BUILD_NUMBER__
         ports:
-        - containerPort: 8080
+        - containerPort: 30003
       imagePullSecrets:
         - name: github-container-registry
