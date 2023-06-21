@@ -30,11 +30,11 @@ jobs:
     if: github.ref == 'refs/heads/main'
     needs: BuildAndPushDockerImage
     steps:
-      name: 'Authenticate to Google Cloud'
-      uses: 'google-github-actions/auth@v1'
-      with:
-        workload_identity_provider: 'projects/$playground-s-11-8f09c96f/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc'
-        service_account: '639824516125-compute@developer.gserviceaccount.com'
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/$playground-s-11-8f09c96f/locations/global/workloadIdentityPools/github-actions/providers/github-actions-oidc'
+          service_account: '639824516125-compute@developer.gserviceaccount.com'
       - name: Connect to GKE
         uses: google-github-actions/get-gke-credentials@v0
         with:
