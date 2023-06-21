@@ -2,7 +2,7 @@ name: Containerized Train CI/CD
 run-name: Train CI/CD
 on: [push]
 env:
-  CLUSTER: amine-cluster
+  CLUSTER: amineb-cluster
   CLUSTER_ZONE: europe-west1-b
 jobs:
   BuildAndPushDockerImage:
